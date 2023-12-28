@@ -1,0 +1,17 @@
+{
+  "name": "backend-training-20",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "module": "commonjs",
+  "scripts": {
+    "start": "nodemon src/index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "@types/typescript": "^2.0.0",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
