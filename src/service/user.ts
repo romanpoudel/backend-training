@@ -1,7 +1,7 @@
 import * as userModel from "../model/users";
 
-export const getUsers = () => {
-  const data = userModel.getUsers();
+export const getUsers = (params: Object) => {
+  const data = userModel.getUsers(params);
 
   return data;
 };

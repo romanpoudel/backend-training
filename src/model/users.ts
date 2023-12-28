@@ -13,8 +13,14 @@ const users = [
   },
 ];
 
-export const getUsers = () => {
-  return users;
+export const getUsers = (params: any) => {
+  let data = users;
+
+  if (params.name) {
+    data = data.filter(({ name }) => name === params.name);
+  }
+
+  return data;
 };
 
 export const getUserById = (id: number) => {

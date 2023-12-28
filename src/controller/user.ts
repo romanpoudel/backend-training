@@ -3,7 +3,9 @@ import { Request, Response } from "express";
 import * as userService from "../service/user";
 
 export const getUsers = (req: Request, res: Response) => {
-  const data = userService.getUsers();
+  const params = req.query;
+
+  const data = userService.getUsers(params);
 
   return res.json({
     data,
