@@ -1,14 +1,11 @@
 import express from "express";
 
 import config from "./config";
+import routes from "./routes";
 
 const app = express();
 
-app.get("/", (req, res) => {
-  res.json({
-    message: "Hello world",
-  });
-});
+app.use(routes);
 
 console.log(`Server listening on port: ${config.serverPort}`);
 
