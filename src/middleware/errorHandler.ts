@@ -27,19 +27,10 @@ export function genericErrorHandler(
     logger.error(err.stack);
   }
 
-  let error: { code: number; message: string };
-
   if (err instanceof UnauthenticatedError) {
-    error = {
-      code: HttpStatus.UNAUTHORIZED,
-      message: err.message,
-    };
-  } else {
-    error = {
-      code: HttpStatus.INTERNAL_SERVER_ERROR,
-      message: "Something went wrong",
-    };
+    return res.status(HttpStatus.UNAUTHORIZED).json({ message: err.message });
   }
-
-  return res.status(error.code).json({ message: error.message });
+  return res
+    .status(HttpStatus.INTERNAL_SERVER_ERROR)
+    .json({ message: err.message });
 }
