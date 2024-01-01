@@ -17,13 +17,7 @@ export const signup = async (req: Request, res: Response) => {
 export const login = async (req: Request, res: Response) => {
   const { body } = req;
 
-  try {
-    const data = await authService.login(body);
+  const data = await authService.login(body);
 
-    return res.json(data);
-  } catch (error) {
-    return res.status(401).json({
-      message: "Unauthorized",
-    });
-  }
+  return res.json(data);
 };

@@ -5,6 +5,7 @@ import routes from "./routes";
 
 const app = express();
 
+// To get req.body
 app.use(express.json());
 
 app.use(routes);
